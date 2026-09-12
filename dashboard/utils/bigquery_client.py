@@ -15,9 +15,11 @@ import os
 import streamlit as st
 from google.cloud import bigquery
 
-PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT", "ntu-bigdata-project")
-REPORTING_DATASET = "olist_reporting"
-
+# PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT", "ntu-bigdata-project")
+# REPORTING_DATASET = "olist_reporting"
+# REPORTING_DATASET = os.environ.get("REPORTING_DATASET", "olist_reporting")
+PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT","project-4c6f97ab-4a26-4d7e-9a8")
+REPORTING_DATASET = os.environ.get(    "REPORTING_DATASET",    "olist_dbt_reporting")
 
 @st.cache_resource
 def get_client() -> bigquery.Client:
